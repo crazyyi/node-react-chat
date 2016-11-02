@@ -1,10 +1,52 @@
-.app {
-  background-color: green;
-  height: 50px;
+.container {
+  background-color: #f1ede4;
   border: 1px solid blue;
+  position: absolute;
+  width: 93%;
 }
 
 .bap {
   background-color: red;
   height: 25px;
+}
+
+.messageboard {
+	height: 480px;
+	width: 99%;
+	font-size: 19px;
+	margin-left: 5px;
+	overflow-y: scroll;
+}
+
+.messageformContainer {
+	height: 180px;
+	width: 100%;
+	margin-top: 10px;
+	padding: 10px 0 10px 10px;
+}
+
+.message {
+	font: 18px "Times New Roman", Times, serif; 
+}
+
+.messageform {
+	height: 110px;
+	width: 97%;
+	font: 18px "Times New Roman", Times, serif;   
+}
+
+.leftContainer {
+	float: left;
+	width: 80%;
+	height: 100%;
+	border: 1px solid;
+}
+
+.rightContainer {
+	float: right;
+	width: 19%;
+}
+
+.userList {
+	width: 99%;
 }
