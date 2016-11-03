@@ -50,6 +50,7 @@ if (isDeveloping) {
   app.get('*', function response(req, res) {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
   });
+  console.log('Using production build');
 }
 
 io.on('connection', socket);
