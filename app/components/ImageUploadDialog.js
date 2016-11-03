@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
-import Spinner from 'react-spinner';
 
 const CLOUDINARY_UPLOAD_PRESET = 'c1gprcm7';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/dpp1fgy7c/upload';

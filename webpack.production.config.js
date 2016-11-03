@@ -49,8 +49,8 @@ module.exports = {
       test: /\.json?$/,
       loader: 'json'
     }, {
-      test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss')
+      test: /(\.css|\.scss)$/,
+      loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!sass?sourceMap'
     }]
   },
   postcss: [

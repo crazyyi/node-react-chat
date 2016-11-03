@@ -45,12 +45,13 @@ if (isDeveloping) {
     res.end();
   });
 
-  io.on('connection', socket);
 } else {
   app.use(express.static(__dirname + '/dist'));
   app.get('*', function response(req, res) {
     res.sendFile(path.join(__dirname, 'dist/index.html'));
   });
 }
+
+io.on('connection', socket);
 
 export default function(){};
