@@ -1,5 +1,5 @@
 {
-  "name": "webpack-express-boilerplate",
+  "name": "nodechat-program",
   "version": "0.1.0",
   "description": "A boilerplate for running a Webpack workflow in Node express",
   "main": "server.js",
@@ -12,7 +12,7 @@
     "webpack",
     "node"
   ],
-  "author": "Christian Alfoni",
+  "author": ["Christian Alfoni", "Aaron Zeng"],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/christianalfoni/webpack-express-boilerplate/issues"
@@ -34,6 +34,7 @@
     "react-addons-test-utils": "^0.14.8",
     "react-dom": "^15.3.2",
     "react-dropzone": "^3.7.2",
+    "react-tap-event-plugin": "^1.0.0",
     "react-toolbox": "^1.2.3",
     "redux-form": "^6.1.1",
     "socket.io": "^1.5.1",

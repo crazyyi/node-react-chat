@@ -44,6 +44,7 @@ export default class App extends React.Component {
   componentDidMount() {
     socket.on('init', this._initialize.bind(this));
     socket.on('send:message', this._messageReceive.bind(this));
+    socket.on('send:private_message', this._messageReceive.bind(this));
     socket.on('user:join', this._userJoined.bind(this));
     socket.on('user:left', this._userLeft.bind(this));
     socket.on('idleusers', this._updateUsersStatus.bind(this));
@@ -103,16 +104,53 @@ export default class App extends React.Component {
 
   }
   
-  handleMessageSubmit(message) {
+  handleMessageSubmit(message, toUser) {
     idleSecondsCounter = 0;
     const {messages} = this.state;
     messages.push(message);
     this.setState({messages});
-    socket.emit('send:message', message);
+    if (toUser === undefined) {
+      if (message.body.indexOf("@") !== -1) {
+        const stringArray = message.body.substring(1).split(":");
+        const to = stringArray[0];
+        const body = stringArray[1];
+        this.state.users.forEach(user => {
+          console.log(to);
+          console.log(user.name);
+          if (user.name === to) {
+            socket.emit('send:private_message', {
+              message, 
+              toUser: user
+            });
+          }
+        });
+        
+      } else {
+        socket.emit('send:message', message);  
+      }
+      
+    } else {
+      socket.emit('send:private_message', {
+        message, toUser
+      });
+      this.setState({
+        reference: undefined
+      })
+    }
   }
 
   getAllMessages() {
     return "Welcome to chat room, " + this.state.user.name;
+  }
+
+  handleUsernameClick(user) {
+    this.setState({
+      reference: user
+    });
+  }
+
+  updateMessageFormText() {
+    // this.state.refer === i ?<CommunicationChat /> : <CommunicationChatBubbleOutline />
   }
 
   _updateUsersStatus(data) {
@@ -148,14 +186,18 @@ export default class App extends React.Component {
             <MessageForm 
               styleClass={styles.messageform} 
               onMessageSubmit={this.handleMessageSubmit.bind(this)}
-              user={this.state.user} /> 
+              user={this.state.user} 
+              reference={this.state.reference}  /> 
             <ImageUploadForm
               socket={socket}
               user={this.state.user} />
           </div>
         </div>
         <div className={styles.rightContainer}>
-          <UserList users={this.state.users}/>
+          <UserList 
+            users={this.state.users}
+            onUsernameClick={this.handleUsernameClick.bind(this)} 
+            updateMessageForm={this.state.reference}/>
         </div>
       </div>
     );

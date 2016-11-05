@@ -56,7 +56,8 @@ const socketHandler = function(socket) {
 	const id = socket.id;
 
 	var user = {
-		name: name,
+		id,
+		name,
 		isIdled: false
 	};
 
@@ -73,6 +74,11 @@ const socketHandler = function(socket) {
 
 	socket.on('send:message', function(data) {
 		socket.broadcast.emit('send:message', data);
+	});
+
+	socket.on('send:private_message', function(data) {
+		const to_Id = data.toUser.id; 
+		socket.broadcast.to(to_Id).emit('send:private_message', data.message);
 	});
 
 	socket.on('user:idle', function(data) {

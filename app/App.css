@@ -16,6 +16,8 @@
 	font-size: 19px;
 	margin-left: 5px;
 	overflow-y: scroll;
+	font: 18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 20.2px;
 }
 
 .messageformContainer {
@@ -26,13 +28,14 @@
 }
 
 .message {
-	font: 18px "Times New Roman", Times, serif; 
+	font: 18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 15.4px;
 }
 
 .messageform {
 	height: 110px;
 	width: 97%;
-	font: 18px "Times New Roman", Times, serif;   
+	font: 18px "Helvetica Neue", Helvetica, Arial, sans-serif; 
 }
 
 .leftContainer {
@@ -45,8 +48,12 @@
 .rightContainer {
 	float: right;
 	width: 19%;
+	font: 18px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 15.4px;
 }
 
 .userList {
 	width: 99%;
+	font: 19px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 15.4px;
 }
