@@ -13,7 +13,7 @@
     "node"
   ],
   "author": ["Christian Alfoni", "Aaron Zeng"],
-  "license": "GNU LGPLv3",
+  "license": "BSD",
   "bugs": {
     "url": "https://github.com/christianalfoni/webpack-express-boilerplate/issues"
   },
