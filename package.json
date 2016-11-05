@@ -1,7 +1,7 @@
 {
   "name": "nodechat-program",
   "version": "0.1.0",
-  "description": "A boilerplate for running a Webpack workflow in Node express",
+  "description": "Node, React & socket.io chat program",
   "main": "server.js",
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
     "node"
   ],
   "author": ["Christian Alfoni", "Aaron Zeng"],
-  "license": "MIT",
+  "license": "GNU LGPLv3",
   "bugs": {
     "url": "https://github.com/christianalfoni/webpack-express-boilerplate/issues"
   },
