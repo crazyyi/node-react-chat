@@ -194,9 +194,9 @@ export default class App extends React.Component {
               socket={socket}
               user={this.state.user} />
           </div>
-          <span className={styles.helpDiv} >
-            {'This version supports emoji such as ":) :D d: :sunglasses:" and private messages.'}
-          </span>
+          <footer className={styles.helpDiv} >
+            <p>{'This version supports emoji such as ":) :D d: :sunglasses:" and private messages.'}</p>
+          </footer>
         </div>
         <div className={styles.rightContainer}>
           <UserList 

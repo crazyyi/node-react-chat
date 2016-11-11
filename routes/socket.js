@@ -97,7 +97,6 @@ const socketHandler = function(socket) {
 	});
 
 	socket.on('image:upload', function(data) {
-		console.log('uploaded image ' + data.image);
 		socket.broadcast.emit('image:display', data); // Send to everyone else except sender
 		socket.emit('image:display', data); // Send to the sender
 	});

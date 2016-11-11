@@ -13,12 +13,24 @@ $mobile: new-breakpoint(max-width 500px 4);
 		}
 
 		.helpDiv {
-			position: absolute;
-			left: 18px;
-			bottom: 15px;
-			font-family: $helvetica;
-		  font-size: golden-ratio(10px,  1);
-			text-align: left;
+			$base-spacing: 0.8em !default;
+		  $medium-screen: 40em !default;
+		  $large-screen: 53.75em !default;
+		  $footer-color: black;
+
+		  padding: $base-spacing * 1.0;
+		  width: 100%;
+		  margin-top: 0.1em;
+
+		  p {
+		  	@include span-columns(8);
+		  	@include media($mobile) {
+				  @include span-columns(4);
+				}
+		  	color: $footer-color;
+		  	font-family: $helvetica;
+  			font-size: golden-ratio(11px,  1);
+		  }
 		}
 	}
 
@@ -73,6 +85,7 @@ $mobile: new-breakpoint(max-width 500px 4);
 
 .userList {
 	width: 99%;
+	overflow-y: scroll;
 	font-family: $helvetica;
   font-size: golden-ratio(14px,  1);
 }
