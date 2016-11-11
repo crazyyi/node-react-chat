@@ -1,10 +1,12 @@
 'use strict';
 
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var StatsPlugin = require('stats-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const StatsPlugin = require('stats-webpack-plugin');
+const bourbon = require('node-bourbon').includePaths;
+const neat = require('node-neat').includePaths;
 
 module.exports = {
   entry: [
@@ -50,7 +52,7 @@ module.exports = {
       loader: 'json'
     }, {
       test: /(\.css|\.scss)$/,
-      loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!sass?sourceMap'
+      loader: 'style!css?modules&sourceMap&localIdentName=[name]---[local]---[hash:base64:5]!resolve-url!sass?outputStyle=expanded&sourceMap'
     }]
   },
   postcss: [
