@@ -13,6 +13,8 @@ var idleSecondsCounter = 0;
 var idleSecondsTimer = null;
 var counterUpdated = false;
 
+const VERSION = 1.0;
+
 document.onclick = function() {
   idleSecondsCounter = 0;
   counterUpdated = true;
@@ -140,7 +142,7 @@ export default class App extends React.Component {
   }
 
   getAllMessages() {
-    return "Welcome to chat room, " + this.state.user.name;
+    return `Welcome to chat room v${VERSION.toFixed(1)}, ` + this.state.user.name;
   }
 
   handleUsernameClick(user) {
@@ -192,6 +194,9 @@ export default class App extends React.Component {
               socket={socket}
               user={this.state.user} />
           </div>
+          <span className={styles.helpDiv} >
+            {'This version supports emoji such as ":) :D d: :sunglasses:" and private messages.'}
+          </span>
         </div>
         <div className={styles.rightContainer}>
           <UserList 

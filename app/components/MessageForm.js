@@ -85,25 +85,21 @@ class MessageForm extends Component {
 		    onTouchTap={this.handleToggle} />,
 	  ];
 		return (
-			<div>
+			<div className="messageformContainer">
 				<form id="form" onSubmit={this.handleSubmit} method="POST">
 						<textarea name="message" className={this.props.styleClass} 
 							ref={input => input && input.focus()}
 							value={this.state.body}
 							onChange={this.handleChange} onKeyUp={this.handleChange}/>
-						<Button style={{
-							position: 'absolute',
-							right:    290,
-							bottom:   10
-						}} label="Submit" raised primary />
 						<Dialog
-		          actions={actions}
-		          modal={false}
-		          open={this.state.open}
-		          onRequestClose={this.handleToggle}
-		          title='Warning'>
-		          <p>Your message can't be blank</p>
+			          actions={actions}
+			          modal={false}
+			          open={this.state.open}
+			          onRequestClose={this.handleToggle}
+			          title='Warning'>
+			          <p>Your message can't be blank</p>
 		        </Dialog>
+						<Button id="submitBtn" label="Submit" raised primary />
 				</form>
 			</div>
 		);

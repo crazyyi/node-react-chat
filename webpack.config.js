@@ -1,8 +1,10 @@
 'use strict';
 
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const bourbon = require('node-bourbon').includePaths;
+const neat = require('node-neat').includePaths;
 
 module.exports = {
   devtool: 'eval-source-map',
@@ -41,7 +43,7 @@ module.exports = {
       loader: 'json'
     }, {
       test: /(\.css|\.scss)$/,
-      loader: 'style!css?modules&localIdentName=[name]---[local]---[hash:base64:5]!sass?sourceMap'
+      loader: 'style!css?modules&sourceMap&localIdentName=[name]---[local]---[hash:base64:5]!resolve-url!sass?outputStyle=expanded&sourceMap'
     }]
   }
 };

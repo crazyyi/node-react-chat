@@ -1,8 +1,7 @@
 This project is based on `https://github.com/christianalfoni/webpack-express-boilerplate.git`.
 
+A Realtime Chat program based on Node.js, Expressjs framework, React.js and Socket.io.
+
+
 Issues:
 
-- Display user upload images onto the MessageBoard
-  - emit to Node backend
-  - Node backend broadcast to all clients
-  - clients fetch the image from cloudinary

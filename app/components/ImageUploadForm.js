@@ -48,11 +48,7 @@ class ImageUploadForm extends Component {
 	  ];
 		return (
 			<form onSubmit={this.handleSubmit} >
-					<Button style={{
-							position: 'absolute',
-							left:    10,
-							bottom:   10
-						}} icon='add' label='image' flat primary />
+					<Button id="imageBtn" icon='add' label='image' flat primary />
 					<Dialog
 		          actions={actions}
 		          modal={false}

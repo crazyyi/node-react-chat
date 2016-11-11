@@ -1,59 +1,78 @@
+@import "~bourbon/app/assets/stylesheets/bourbon";
+@import "~bourbon-neat/app/assets/stylesheets/neat";
+
+$mobile: new-breakpoint(max-width 500px 4);
+
 .container {
   background-color: #f1ede4;
-  border: 1px solid blue;
-  position: absolute;
-  width: 93%;
-}
 
-.bap {
-  background-color: red;
-  height: 25px;
+  .leftContainer {
+		@include span-columns(9);
+		@include media($mobile) {
+		  @include span-columns(4);
+		}
+
+		.helpDiv {
+			position: absolute;
+			left: 18px;
+			bottom: 15px;
+			font-family: $helvetica;
+		  font-size: golden-ratio(10px,  1);
+			text-align: left;
+		}
+	}
+
+	.rightContainer {
+		@include span-columns(3);
+		@include media($mobile) {
+		  @include span-columns(4);
+		}
+		font-family: $helvetica;
+	  font-size: golden-ratio(14px,  1);
+	}
 }
 
 .messageboard {
-	height: 480px;
+	height: 500px;
 	width: 99%;
 	font-size: 19px;
 	margin-left: 5px;
 	overflow-y: scroll;
-	font: 18px "Helvetica Neue", Helvetica, Arial, sans-serif;
-	line-height: 20.2px;
+	font-family: $helvetica;
+  font-size: golden-ratio(12px,  1);
 }
 
 .messageformContainer {
+	@include outer-container;
 	height: 180px;
 	width: 100%;
 	margin-top: 10px;
 	padding: 10px 0 10px 10px;
+
+	.messageform {
+		height: 120px;
+		width: 97%;
+		font-family: $helvetica;
+	  font-size: golden-ratio(11px,  1);
+	}
+
+	form {
+		button {
+			@include span-columns(3);
+			font-family: $helvetica;
+		  font-size: golden-ratio(10px,  1);
+		}
+		
+	}
 }
 
 .message {
-	font: 18px "Helvetica Neue", Helvetica, Arial, sans-serif;
-	line-height: 15.4px;
-}
-
-.messageform {
-	height: 110px;
-	width: 97%;
-	font: 18px "Helvetica Neue", Helvetica, Arial, sans-serif; 
-}
-
-.leftContainer {
-	float: left;
-	width: 80%;
-	height: 100%;
-	border: 1px solid;
-}
-
-.rightContainer {
-	float: right;
-	width: 19%;
-	font: 18px "Helvetica Neue", Helvetica, Arial, sans-serif;
-	line-height: 15.4px;
+	font-family: $helvetica;
+  font-size: golden-ratio(14px,  1);
 }
 
 .userList {
 	width: 99%;
-	font: 19px "Helvetica Neue", Helvetica, Arial, sans-serif;
-	line-height: 15.4px;
+	font-family: $helvetica;
+  font-size: golden-ratio(14px,  1);
 }

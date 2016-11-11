@@ -12,7 +12,10 @@
     "webpack",
     "node"
   ],
-  "author": ["Christian Alfoni", "Aaron Zeng"],
+  "author": [
+    "Christian Alfoni",
+    "Aaron Zeng"
+  ],
   "license": "BSD",
   "bugs": {
     "url": "https://github.com/christianalfoni/webpack-express-boilerplate/issues"
@@ -28,15 +31,19 @@
   "dependencies": {
     "babel-cli": "^6.16.0",
     "immutability-helper": "^2.0.0",
-    "node-sass": "^3.10.1",
+    "node-bourbon": "^4.2.8",
+    "node-neat": "^1.7.2",
+    "node-sass": "^3.11.2",
     "react": "^15.3.2",
     "react-addons-css-transition-group": "^15.3.2",
     "react-addons-test-utils": "^0.14.8",
     "react-dom": "^15.3.2",
     "react-dropzone": "^3.7.2",
+    "react-emoji": "^0.4.4",
     "react-tap-event-plugin": "^1.0.0",
     "react-toolbox": "^1.2.3",
     "redux-form": "^6.1.1",
+    "resolve-url-loader": "^1.6.0",
     "socket.io": "^1.5.1",
     "superagent": "^2.3.0"
   },
